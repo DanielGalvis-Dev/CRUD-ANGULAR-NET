@@ -1,0 +1,92 @@
+<mat-card>
+  <!-- Encabezado de la tarjeta -->
+  <mat-card-header>
+    <!-- Título de la tarjeta -->
+    <mat-card-title>
+      <p>Empleados</p>
+    </mat-card-title>
+  </mat-card-header>
+
+  <!-- Contenido de la tarjeta -->
+  <mat-card-content>
+    <!-- Botón para crear un nuevo empleado -->
+    <button mat-raised-button color="primary" (click)="crear()">
+      Nuevo Empleado
+    </button>
+
+    <!-- Tabla que muestra la lista de empleados -->
+    <table mat-table [dataSource]="listarEmpleados" class="mat-elevation-z2">
+      <!-- Comentario general: Las columnas pueden definirse en cualquier orden.
+             Las columnas que se renderizan realmente están configuradas como una propiedad en la definición de la fila. -->
+
+      <!-- Columna de Id -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>Id</th>
+        <!-- Encabezado de la columna -->
+        <td mat-cell *matCellDef="let element">{{ element.idP }}</td>
+        <!-- Celda que muestra el Id del empleado -->
+      </ng-container>
+
+      <!-- Columna de Nombre -->
+      <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef>Nombre</th>
+        <!-- Encabezado de la columna -->
+        <td mat-cell *matCellDef="let element">{{ element.nombreP }}</td>
+        <!-- Celda que muestra el Nombre del empleado -->
+      </ng-container>
+
+      <!-- Columna de Apellido -->
+      <ng-container matColumnDef="apellido">
+        <th mat-header-cell *matHeaderCellDef>Apellido</th>
+        <!-- Encabezado de la columna -->
+        <td mat-cell *matCellDef="let element">{{ element.apellidoP }}</td>
+        <!-- Celda que muestra el Apellido del empleado -->
+      </ng-container>
+
+      <!-- Columna de Correo -->
+      <ng-container matColumnDef="correo">
+        <th mat-header-cell *matHeaderCellDef>Correo</th>
+        <!-- Encabezado de la columna -->
+        <td mat-cell *matCellDef="let element">{{ element.correoP }}</td>
+        <!-- Celda que muestra el Correo del empleado -->
+      </ng-container>
+
+      <!-- Columna de Sueldo -->
+      <ng-container matColumnDef="sueldo">
+        <th mat-header-cell *matHeaderCellDef>Sueldo</th>
+        <!-- Encabezado de la columna -->
+        <td mat-cell *matCellDef="let element">{{ element.sueldoP }}</td>
+        <!-- Celda que muestra el Sueldo del empleado -->
+      </ng-container>
+
+      <!-- Columna de Fecha de Contrato -->
+      <ng-container matColumnDef="fechaContrato">
+        <th mat-header-cell *matHeaderCellDef>Fecha de Contrato</th>
+        <!-- Encabezado de la columna -->
+        <td mat-cell *matCellDef="let element">{{ element.fechaContratoP }}</td>
+        <!-- Celda que muestra la Fecha de Contrato del empleado -->
+      </ng-container>
+
+      <!-- Columna de Acciones -->
+      <ng-container matColumnDef="accion">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <!-- Columna sin encabezado (vacía) -->
+        <td mat-cell *matCellDef="let element">
+          <!-- Botón para editar un empleado -->
+          <button mat-mini-fab color="primary" (click)="editar(element)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <!-- Botón para eliminar un empleado -->
+          <button mat-mini-fab color="warn" (click)="eliminar(element)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <!-- Fila de encabezado de la tabla -->
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <!-- Fila de datos de la tabla -->
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </mat-card-content>
+</mat-card>

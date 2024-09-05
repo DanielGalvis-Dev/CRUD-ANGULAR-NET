@@ -1,0 +1,63 @@
+<div
+  class="mat-elevation-z2"
+  style="
+    width: 30%;
+    padding: 30px;
+    margin: 50px auto;
+    display: flex;
+    justify-content: center;
+  "
+>
+  <form [formGroup]="formEmpleado">
+    <div class="flex">
+      <mat-form-field class="example-full-width">
+        <mat-label>Nombre</mat-label>
+        <input
+          matInput
+          formControlName="nombre"
+          placeholder="Ingrese el nombre"
+        />
+      </mat-form-field>
+    </div>
+    <div class="flex">
+      <mat-form-field class="example-full-width">
+        <mat-label>Apellido</mat-label>
+        <input
+          matInput
+          formControlName="apellido"
+          placeholder="Ingrese el apellido"
+        />
+      </mat-form-field>
+    </div>
+    <div class="flex">
+      <mat-form-field class="example-full-width">
+        <mat-label>Correo</mat-label>
+        <input
+          matInput
+          formControlName="correo"
+          placeholder="Ingrese el correo"
+        />
+      </mat-form-field>
+    </div>
+    <div class="flex">
+      <mat-form-field class="example-full-width">
+        <mat-label>sueldo</mat-label>
+        <input type="number" matInput formControlName="sueldo" />
+      </mat-form-field>
+    </div>
+    <div class="flex">
+      <mat-form-field class="example-full-width">
+        <mat-label>Fecha de Contrato</mat-label>
+        <input matInput formControlName="fechaContrato" />
+      </mat-form-field>
+    </div>
+    <div class="flex" style=" display: flex; justify-content: space-around;">
+      <button mat-flat-button color="primary" (click)="guardar()">
+        Guardar
+      </button>
+      <button mat-stroked-button color="primary" (click)="volver()">
+        Volver
+      </button>
+    </div>
+  </form>
+</div>
