@@ -73,12 +73,12 @@
         <!-- Columna sin encabezado (vacía) -->
         <td mat-cell *matCellDef="let element">
           <!-- Botón para editar un empleado -->
-          <button mat-mini-fab color="primary" (click)="editar(element)">
-            <mat-icon>edit</mat-icon>
+          <button mat-icon-button (click)="editar(element)">
+            <mat-icon color="primary">edit</mat-icon>
           </button>
           <!-- Botón para eliminar un empleado -->
-          <button mat-mini-fab color="warn" (click)="eliminar(element)">
-            <mat-icon>delete</mat-icon>
+          <button mat-icon-button (click)="eliminar(element)">
+            <mat-icon color="warn">delete</mat-icon>
           </button>
         </td>
       </ng-container>
