@@ -8,8 +8,11 @@
     justify-content: center;
   "
 >
+  <!-- Formulario reactivo vinculado al formGroup 'formEmpleado' del componente -->
   <form [formGroup]="formEmpleado">
+    <!-- Contenedor flex para organizar los elementos del formulario -->
     <div class="flex">
+      <!-- Campo de entrada para el nombre del empleado -->
       <mat-form-field class="example-full-width">
         <mat-label>Nombre</mat-label>
         <input
@@ -19,7 +22,9 @@
         />
       </mat-form-field>
     </div>
+    
     <div class="flex">
+      <!-- Campo de entrada para el apellido del empleado -->
       <mat-form-field class="example-full-width">
         <mat-label>Apellido</mat-label>
         <input
@@ -29,7 +34,9 @@
         />
       </mat-form-field>
     </div>
+
     <div class="flex">
+      <!-- Campo de entrada para el correo del empleado -->
       <mat-form-field class="example-full-width">
         <mat-label>Correo</mat-label>
         <input
@@ -39,19 +46,25 @@
         />
       </mat-form-field>
     </div>
+
     <div class="flex">
+      <!-- Campo de entrada para el sueldo del empleado -->
       <mat-form-field class="example-full-width">
-        <mat-label>sueldo</mat-label>
+        <mat-label>Sueldo</mat-label>
         <input type="number" matInput formControlName="sueldo" />
       </mat-form-field>
     </div>
+
     <div class="flex">
+      <!-- Campo de entrada para la fecha de contrato del empleado -->
       <mat-form-field class="example-full-width">
         <mat-label>Fecha de Contrato</mat-label>
         <input matInput formControlName="fechaContrato" />
       </mat-form-field>
     </div>
-    <div class="flex" style=" display: flex; justify-content: space-around;">
+
+    <!-- Botones para guardar o volver a la página anterior -->
+    <div class="flex" style="display: flex; justify-content: space-around;">
       <button mat-flat-button color="primary" (click)="guardar()">
         Guardar
       </button>
