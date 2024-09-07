@@ -4,7 +4,7 @@ CREATE DATABASE dbcrudangularnet CHARACTER SET utf8mb4 COLLATE utf8mb4_general_c
 USE dbcrudangularnet;
 
 -- Procedimiento almacenado para insertar un nuevo empleado
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_createEmpleado` (
+CREATE PROCEDURE `sp_createEmpleado` (
     IN `p_Nombre` VARCHAR(50),
     IN `p_Apellido` VARCHAR(50),
     IN `p_Correo` VARCHAR(100),
@@ -30,7 +30,7 @@ BEGIN
 END;
 
 -- Procedimiento almacenado para eliminar un empleado por su ID
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_deleteEmpleado` (IN `p_Id` INT)
+CREATE PROCEDURE `sp_deleteEmpleado` (IN `p_Id` INT)
 BEGIN
     -- Eliminar empleado de la tabla por su ID
     DELETE FROM empleados
@@ -38,7 +38,7 @@ BEGIN
 END;
 
 -- Procedimiento almacenado para obtener los datos de un empleado por su ID
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_getEmpleado` (IN `p_Id` INT)
+CREATE PROCEDURE `sp_getEmpleado` (IN `p_Id` INT)
 BEGIN
     -- Seleccionar un empleado de la tabla usando el ID proporcionado
     SELECT * FROM empleados
@@ -46,14 +46,14 @@ BEGIN
 END;
 
 -- Procedimiento almacenado para obtener la lista completa de empleados
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_readEmpleados` ()
+CREATE PROCEDURE `sp_readEmpleados` ()
 BEGIN
     -- Seleccionar todos los empleados de la tabla
     SELECT * FROM empleados;
 END;
 
 -- Procedimiento almacenado para actualizar los datos de un empleado
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_updateEmpleado` (
+CREATE PROCEDURE `sp_updateEmpleado` (
     IN `p_Id` INT,
     IN `p_Nombre` VARCHAR(50),
     IN `p_Apellido` VARCHAR(50),
